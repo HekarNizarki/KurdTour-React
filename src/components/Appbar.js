@@ -12,6 +12,14 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import IconApp from "../assets/IconApp";
+
+// const pages = [
+//   { name: "Home", url: "/" },
+//   { name: "Locations", url: "/locations" },
+//   { name: "Contact", url: "/contact" },
+// ];
+// const settings = [{ name: "Profile", url: "/profile" }];
+
 const pages = ["Home", "Locations", "Contact"];
 const settings = ["Profile", "Logout"];
 

@@ -8,6 +8,9 @@ This project is specialized with view the most tourist location in Kurdistan reg
 
 ## Technologies use it in application
 
-
+- firebase
+- axios
+- Material UI
+- Tailwind 
 
 ## Screenshots of application

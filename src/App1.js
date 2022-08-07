@@ -17,6 +17,7 @@ const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
+  
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -36,6 +37,7 @@ const ResponsiveAppBar = () => {
   };
 
   return (
+    
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -157,6 +159,7 @@ const ResponsiveAppBar = () => {
         </Toolbar>
       </Container>
     </AppBar>
+    
   );
 };
 export default ResponsiveAppBar;

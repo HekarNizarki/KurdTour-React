@@ -9,7 +9,7 @@ import Profile from "./pages/Profile";
 
 function App() {
   return (
-    <div className="App">
+    <div className="bg-teal-50 w-screen h-screen">
       <ResponsiveAppBar />
       <Routes>
         <Route path="/" element={<Home />} />

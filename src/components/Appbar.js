@@ -41,11 +41,15 @@ export default function Example() {
                     src={Logo}
                     alt="Workflow"
                   />
+
                   <img
                     className="hidden lg:block h-8 w-auto"
                     src={Logo}
                     alt="Workflow"
                   />
+                  <p className="font-serif text-xl font-semibold mx-2">
+                    KurdTour
+                  </p>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">

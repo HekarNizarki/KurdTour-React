@@ -7,8 +7,6 @@ import Location from "./pages/Location";
 import Contact from "./pages/Contact";
 import Profile from "./pages/Profile";
 
-
-
 function App() {
   return (
     <div className="App">
@@ -18,7 +16,7 @@ function App() {
         <Route path="/locations" element={<Locations />} />
         <Route path="/locations/:id" element={<Location />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/user" element={<Profile />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="*" element={<p> no page to show </p>} />
       </Routes>
     </div>

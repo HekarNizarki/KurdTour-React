@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
-    <div className="justify-center">
+    <div className="justify-center bg-teal-50 lg:pb-32 ">
       <main className="mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
         <div className="sm:text-center lg:text-left">
           <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
@@ -34,16 +34,14 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-        <div className="lg:absolute lg:right-5 lg:top-28 lg:w-1/2 lg:h-auto sm:p-4 z-0">
-        <img
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full z-0 mt-5"
-          src="https://www.rudaw.net/ContentFilesArchive/622613Image1.jpg?version=4427631"
-          alt=""
-        />
-      </div>
+        <div className="lg:absolute lg:right-5 lg:top-28 lg:w-1/2 lg:h-auto mt-4 pb-4">
+          <img
+            className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+            src="https://www.rudaw.net/ContentFilesArchive/622613Image1.jpg?version=4427631"
+            alt=""
+          />
+        </div>
       </main>
-
-      
     </div>
   );
 }

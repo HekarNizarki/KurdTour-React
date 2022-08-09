@@ -24,7 +24,7 @@ export default function HeroSection() {
                 View locations
               </Link>
             </div>
-            <div className="mt-3 mb-10 sm:mt-0 sm:ml-3">
+            <div className="mt-3  sm:mt-0 sm:ml-3 ">
               <Link
                 to="/locations"
                 className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-gray-200 hover:bg-gray-300 md:py-4 md:text-lg md:px-10"
@@ -36,7 +36,7 @@ export default function HeroSection() {
         </div>
         <div className="lg:absolute lg:right-5 lg:top-28 lg:w-1/2 lg:h-auto sm:p-4 z-0">
         <img
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full z-0"
+          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full z-0 mt-5"
           src="https://www.rudaw.net/ContentFilesArchive/622613Image1.jpg?version=4427631"
           alt=""
         />

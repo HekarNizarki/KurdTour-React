@@ -7,6 +7,7 @@ import Location from "./pages/Location";
 import Contact from "./pages/Contact";
 import Profile from "./pages/Profile";
 
+
 function App() {
   return (
     <div className="bg-teal-50 w-screen h-screen">

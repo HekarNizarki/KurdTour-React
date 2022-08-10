@@ -1,5 +1,9 @@
 import React from "react";
-
+import AllLocation from "../components/AllLocation";
 export default function Locations() {
-  return <div>Locations</div>;
+  return (
+    <div>
+      <AllLocation />
+    </div>
+  );
 }

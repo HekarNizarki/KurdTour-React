@@ -11,7 +11,8 @@ This project is specialized with view the most tourist location in Kurdistan reg
 - firebase
 - axios
 - Material UI
-- Tailwind 
+- Tailwind
 - react-router
+- react-rating-stars-component
 
 ## Screenshots of application

@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
+import ReactStars from "react-rating-stars-component";
 
 export default function Example() {
   const [location, Setlocation] = useState([]);
-
- 
 
   useEffect(() => {
     const locationCollection = collection(db, "Location");
@@ -57,7 +56,18 @@ export default function Example() {
                   <h3 className="text-xl font-semibold text-gray-900">
                     <a href={location.href}>
                       <span aria-hidden="true" className="absolute inset-0" />
-                      {location.rating}
+
+                      <ReactStars
+                        count={location.rating}
+                        size={24}
+                        edit = {false}
+                        value={location.rating}
+                        isHalf={true}
+                        emptyIcon={<i className="far fa-star"></i>}
+                        halfIcon={<i className="fa fa-star-half-alt"></i>}
+                        fullIcon={<i className="fa fa-star"></i>}
+                        activeColor="#ffd700"
+                      />
                     </a>
                   </h3>
                 </div>

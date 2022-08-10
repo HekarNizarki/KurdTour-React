@@ -1,5 +1,3 @@
-import Divider from "@mui/material/Divider";
-
 const Locations = [
   {
     id: 1,

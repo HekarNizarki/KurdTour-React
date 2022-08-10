@@ -1,46 +1,43 @@
-import Divider from "@mui/material/Divider";
-
 const Locations = [
   {
     id: 1,
-    name: "Duhok",
+    name: "Duhok Mall",
     href: "#",
     imageSrc:
-      "https://scontent.febl9-1.fna.fbcdn.net/v/t1.6435-9/89894444_140375824134976_9037075004302295040_n.jpg?stp=dst-jpg_p720x720&_nc_cat=110&ccb=1-7&_nc_sid=a26aad&_nc_eui2=AeEljvwCuL8wACVsZ9YRtWDX2LPnGLcCrE3Ys-cYtwKsTWTytkclcSbaieqWH__AZJft0IJpv1QL0e-EX7P4kf1f&_nc_ohc=2G4MwM1j4-sAX_X0SSV&_nc_ht=scontent.febl9-1.fna&oh=00_AT_qfUE4kvyT7N3f810KWpp6Ku5tNuoP_5MGr1YYq7bT0g&oe=6316A5CA",
+      "http://www.marsmekanik.com/Upload/Galeri/Kucuk/6122016112023947.jpg",
     imageAlt: "Front of men's Basic Tee in black.",
-    numberOfLocation: "3",
+    cityOfLocation: "Duhok",
   },
   {
     id: 2,
-    name: "Hewler",
+    name: "Erbil Citadel",
     href: "#",
     imageSrc:
-      "https://esta.krd/wp-content/uploads/2021/09/20640309329_24ecf4876a_b.jpg",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/fb/e3/3a/photo1jpg.jpg?w=1200&h=-1&s=1",
     imageAlt: "Front of men's Basic Tee in black.",
-    numberOfLocation: "4",
+    cityOfLocation: "Erbil",
   },
   {
     id: 3,
-    name: "Sulaimani",
+    name: "Ahmad Awa",
     href: "#",
     imageSrc:
-      "https://www.rudaw.net/ContentFilesArchive/509856Image1.jpg?version=3620554",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/44/18/c1/this-beautiful-resort.jpg?w=1200&h=-1&s=1",
     imageAlt: "Front of men's Basic Tee in black.",
-    numberOfLocation: "6",
+    cityOfLocation: "Sulaimaniya",
   },
-
   // More Locations...
 ];
 
-export default function Example() {
+export default function BestLocation() {
   return (
     <div className="bg-teal-100">
-      <div className="max-w-2xl mx-auto pt-16 px-4 sm:pt-24 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
+      <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
         <h2 className="text-3xl font-bold tracking-tight text-gray-800 ">
-          Find locations that interest you
+          Best locations that interest you
         </h2>
         <h2 className="text-xl tracking-tight text-gray-500  mt-4">
-          Collections of Locations in cities
+          Collections of our best Locations in cities
         </h2>
 
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8">
@@ -63,7 +60,7 @@ export default function Example() {
                   </h3>
                 </div>
                 <p className="text-sm font-medium mt-1 text-gray-900">
-                  {location.numberOfLocation} Locations
+                  {location.cityOfLocation}
                 </p>
               </div>
             </div>

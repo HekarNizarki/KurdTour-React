@@ -61,17 +61,17 @@ export default function Example() {
 
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8">
           {Locations.map((location) => (
-            <div key={location.id} className="group relative">
-              <div className="w-full min-h-8 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+            <div key={location.id} className="group relative bg-cyan-200 rounded-md border border-gray-400 shadow-md">
+              <div className="w-full  min-h-8 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                 <img
                   src={location.imageSrc}
                   alt={location.imageAlt}
                   className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                 />
               </div>
-              <div className="mt-2 flex justify-between">
+              <div className="mt-2 flex justify-between p-3">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900">
+                  <h3 className="text-xl font-semibold text-gray-900 ">
                     <a href={location.href}>
                       <span aria-hidden="true" className="absolute inset-0" />
                       {location.name}

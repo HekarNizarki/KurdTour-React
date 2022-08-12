@@ -13,7 +13,6 @@ export default function Example() {
     // const getAllLocations = async () => {
     //   const data = await getDocs(locationCollection);
     //   Setlocation(data.docs.map((doc) => ({ ...doc.data(), id: doc.lid })));
-
     // };
     onSnapshot(
       query(collection(db, "Location"), where("locationname", "==", "Duhok")),
@@ -73,7 +72,7 @@ export default function Example() {
           >
             <div className="w-full  min-h-8 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
               <img
-                src="http://www.marsmekanik.com/Upload/Galeri/Kucuk/6122016112023947.jpg"
+                src="https://upload.wikimedia.org/wikipedia/commons/2/26/City_of_Duhok.jpg"
                 alt="Duhok"
                 className="w-full h-full object-center object-cover lg:w-full lg:h-full"
               />

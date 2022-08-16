@@ -50,7 +50,7 @@ export default function Example() {
                 <div className="w-full min-h-8 bg-gray-200 aspect-w-1 aspect-h-1  rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                   <img
                     src={
-                      location.image < 0 ? (
+                      !location.image ? (
                         <ReactLoading
                           type="spinningBubbles"
                           color="#FFFFFF"

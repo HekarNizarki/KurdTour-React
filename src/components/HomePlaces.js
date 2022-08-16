@@ -53,6 +53,9 @@ export default function Example() {
   const slingth = Object.keys(slocation).length;
 
   // console.log(dlingth);
+  const Duhok = "Duhok";
+  const Erbil = "Erbil";
+  const Sulaimany = "Sulaimaniya";
 
   return (
     <div className="bg-teal-100">
@@ -80,7 +83,7 @@ export default function Example() {
             <div className="mt-2 flex justify-between p-3">
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 ">
-                  <Link to="/">
+                  <Link to={`/${Duhok}`}>
                     <span aria-hidden="true" className="absolute inset-0" />
                     Duhok
                   </Link>
@@ -108,7 +111,7 @@ export default function Example() {
             <div className="mt-2 flex justify-between p-3">
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 ">
-                  <Link to="/">
+                  <Link to={`/${Erbil}`}>
                     <span aria-hidden="true" className="absolute inset-0" />
                     Erbil
                   </Link>
@@ -136,7 +139,7 @@ export default function Example() {
             <div className="mt-2 flex justify-between p-3">
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 ">
-                  <Link to="/">
+                  <Link to={`/${Sulaimany}`}>
                     <span aria-hidden="true" className="absolute inset-0" />
                     Sulaimaniya
                   </Link>

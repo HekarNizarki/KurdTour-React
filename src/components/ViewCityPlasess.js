@@ -3,6 +3,8 @@ import ReactStars from "react-rating-stars-component";
 import { db } from "../firebase";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 
 export default function ViewCityPlasess() {
   const [dlocation, Setdlocation] = useState([]);
@@ -30,7 +32,14 @@ export default function ViewCityPlasess() {
 
   return (
     <div className="bg-teal-100">
-      <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
+      <div className="absolute ml-24 pt-16 text-4xl">
+        <Link to={`/`}>
+          {" "}
+          <BsFillArrowLeftSquareFill />{" "}
+        </Link>
+      </div>
+
+      <div className="max-w-2xl mx-auto py-8 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
         <h2 className="text-3xl font-bold tracking-tight text-gray-800 ">
           Best locations that interest you in {id}
         </h2>

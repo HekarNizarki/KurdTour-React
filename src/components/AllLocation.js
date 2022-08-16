@@ -54,12 +54,11 @@ export default function Example() {
                         <ReactLoading
                           type="spinningBubbles"
                           color="#FFFFFF"
-                          height={200}
-                          width={200}
+                          height={400}
+                          width={400}
                         />
-                      ) : (
-                        location.image
-                      )
+                      ) : location.image
+                      
                     }
                     alt={location.image}
                     className="w-full h-full object-center object-cover lg:w-full lg:h-full"

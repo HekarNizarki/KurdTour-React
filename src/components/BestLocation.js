@@ -88,7 +88,7 @@ export default function BestLocation() {
                     </a>
                   </h3>
                 </div>
-                <p className="text-sm font-medium mt-1 text-gray-900">
+                <p className="text-xs font-medium mt-1 text-gray-900 sm:text-sm md:text-sm">
                   Opening hours: {location.openhourse}
                 </p>
               </div>

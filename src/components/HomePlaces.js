@@ -58,10 +58,10 @@ export default function Example() {
     <div className="bg-teal-100">
       <div className="max-w-2xl mx-auto pt-16 px-4 sm:pt-24 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
         <h2 className="text-3xl font-bold tracking-tight text-gray-800 ">
-          Find Alllocations that interest you
+          Find All Locations that interest you
         </h2>
         <h2 className="text-xl tracking-tight text-gray-500  mt-4">
-          Collections of AllLocations in cities
+          Collections of All Locations in cities
         </h2>
 
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8">

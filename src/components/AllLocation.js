@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import ReactStars from "react-rating-stars-component";
+import ReactLoading from "react-loading";
+
 
 export default function Example() {
   const [location, Setlocation] = useState([]);
@@ -18,6 +20,18 @@ export default function Example() {
 
   console.log(location);
 
+  if (!location) {
+    return (
+      <div className="flex flex-row justify-center items-center ">
+        <ReactLoading
+          type="spinningBubbles"
+          color="#FF00FF"
+          height={200}
+          width={200}
+        />
+      </div>
+    );
+  } else {
   return (
     <div className="bg-teal-100 pb-6">
       <div className="max-w-2xl mx-auto pt-16 px-4 sm:pt-24 sm:px-6 lg:max-w-7xl lg:px-8 text-center ">
@@ -36,7 +50,12 @@ export default function Example() {
             >
               <div className="w-full min-h-8 bg-gray-200 aspect-w-1 aspect-h-1  rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                 <img
-                  src={location.image}
+                  src={location.image < 0 ? 
+                    (<ReactLoading 
+                  type="spinningBubbles"
+                  color="#FF00FF"
+                  height={200}
+                  width={200}/>) : location.image  }
                   alt={location.image}
                   className="w-full h-full object-center object-cover lg:w-full lg:h-full"
                 />
@@ -74,7 +93,7 @@ export default function Example() {
                     </a>
                   </h3>
                 </div>
-                <p className="text-sm font-medium mt-1 text-gray-900">
+                <p className="text-xs font-medium mt-1 text-gray-900 sm:text-sm md:text-sm">
                   Opening hours: {location.openhourse}
                 </p>
               </div>
@@ -84,4 +103,4 @@ export default function Example() {
       </div>
     </div>
   );
-}
+}}

@@ -62,6 +62,7 @@ export default function Example() {
       <div className="max-w-2xl mx-auto pt-16 px-4 sm:pt-24 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
         <h2 className="text-3xl font-bold tracking-tight text-gray-800 ">
           Find All Locations that interest you
+          {dlocation.title}
         </h2>
         <h2 className="text-xl tracking-tight text-gray-500  mt-4">
           Collections of All Locations in cities

@@ -8,6 +8,7 @@ import {
   limit,
 } from "firebase/firestore";
 import ReactStars from "react-rating-stars-component";
+import { Link } from "@mui/material";
 
 export default function BestLocation() {
   const [location, Setlocation] = useState([]);
@@ -31,10 +32,13 @@ export default function BestLocation() {
     // getLocations();
   }, []);
 
-  console.log(location);
+  console.log(location.id);
+
   return (
     <div className="bg-teal-100">
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
+        <Link to={`/location/${"Duhok Mall"}`}>{"doski"}</Link>
+
         <h2 className="text-3xl font-bold tracking-tight text-gray-800 ">
           Best locations that interest you
         </h2>
@@ -57,11 +61,11 @@ export default function BestLocation() {
               </div>
               <div className="mt-2 flex justify-between p-3">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900">
-                    <a href={location.href}>
+                  <h3 className="text-xl font-semibold text-gray-900 ">
+                    <Link to={`/location/${"Duhok Mall"}`}>
                       <span aria-hidden="true" className="absolute inset-0" />
-                      {location.title}
-                    </a>
+                      {"doski"}
+                    </Link>
                   </h3>
                 </div>
                 <p className="text-sm font-medium mt-1 text-gray-900">

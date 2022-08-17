@@ -4,13 +4,12 @@ import { db } from "../firebase";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 
-export default function ViewCityPlasess() {
+export default function SingleLocation() {
   const [dlocation, Setdlocation] = useState([]);
-  const { id } = useParams();
+  const { locationtitle } = useParams();
 
- 
+  console.log("idddd", locationtitle);
 
   useEffect(() => {
     // const locationCollection = collection(db, "Location");
@@ -19,7 +18,7 @@ export default function ViewCityPlasess() {
     //   Setlocation(data.docs.map((doc) => ({ ...doc.data(), id: doc.lid })));
     // };
     onSnapshot(
-      query(collection(db, "Location"), where("locationname", "==", id)),
+      query(collection(db, "Location"), where("title", "==", locationtitle)),
       (snapshot) => {
         Setdlocation(
           snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.lid }))
@@ -33,15 +32,12 @@ export default function ViewCityPlasess() {
   return (
     <div className="bg-teal-100">
       <div className="absolute ml-24 pt-16 text-4xl">
-        <Link to={`/`}>
-          {" "}
-          <BsFillArrowLeftSquareFill />{" "}
-        </Link>
+        <Link to={`/`}> </Link>
       </div>
 
       <div className="max-w-2xl mx-auto py-8 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
         <h2 className="text-3xl font-bold tracking-tight text-gray-800 ">
-          Best locations that interest you in {id}
+          Best locations that interest you in {locationtitle}
         </h2>
         <h2 className="text-xl tracking-tight text-gray-500  mt-4">
           Collections of our best Locations in cities

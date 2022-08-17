@@ -32,7 +32,7 @@ export default function ViewCityPlasess() {
 
   return (
     <div className="bg-teal-100">
-      <div className="absolute ml-24 pt-16 text-4xl">
+      <div className="absolute ml-2 pt-2 text-2xl md:ml-24 md:pt-16 md:text-4xl">
         <Link to={`/`}>
           {" "}
           <BsFillArrowLeftSquareFill />{" "}
@@ -40,7 +40,7 @@ export default function ViewCityPlasess() {
       </div>
 
       <div className="max-w-2xl mx-auto py-8 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-800 ">
+        <h2 className="text-2xl font-bold tracking-tight text-gray-800 md:text-3xl ">
           Best locations that interest you in {id}
         </h2>
         <h2 className="text-xl tracking-tight text-gray-500  mt-4">

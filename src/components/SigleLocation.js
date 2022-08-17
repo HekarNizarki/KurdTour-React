@@ -1,76 +1,99 @@
-import { useState, useEffect } from "react";
-import ReactStars from "react-rating-stars-component";
-import { db } from "../firebase";
-import { collection, onSnapshot, query, where } from "firebase/firestore";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { BsFillArrowLeftSquareFill } from "react-icons/bs";
+import { StarIcon } from "@heroicons/react/solid";
 
+const product = {
+  name: "Basic Tee 6-Pack",
+  price: "$192",
+  href: "#",
 
-export default function SingleLocation() {
-  const [dlocation, Setdlocation] = useState([]);
-  const { locationtitle } = useParams();
+  images: [
+    {
+      src: "https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg",
+      alt: "Two each of gray, white, and black shirts laying flat.",
+    },
+  ],
 
-  console.log("idddd", locationtitle);
+  description:
+    'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
+  highlights: [
+    "Hand cut and sewn locally",
+    "Dyed with our proprietary colors",
+    "Pre-washed & pre-shrunk",
+    "Ultra-soft 100% cotton",
+  ],
+  details:
+    'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
+};
+const reviews = { href: "#", average: 4, totalCount: 117 };
 
-  useEffect(() => {
-    // const locationCollection = collection(db, "Location");
-    // const getAllLocations = async () => {
-    //   const data = await getDocs(locationCollection);
-    //   Setlocation(data.docs.map((doc) => ({ ...doc.data(), id: doc.lid })));
-    // };
-    onSnapshot(
-      query(collection(db, "Location"), where("title", "==", locationtitle)),
-      (snapshot) => {
-        Setdlocation(
-          snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.lid }))
-        );
-      }
-    );
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
-    // getAllLocations();
-  });
-
+export default function Example() {
   return (
-    <div className="bg-teal-100">
-     <div className="absolute ml-2 pt-2 text-2xl md:ml-24 md:pt-16 md:text-4xl">
-        <Link to={`/`}>
-          {" "}
-          <BsFillArrowLeftSquareFill />{" "}
-        </Link>
-      </div>
+    <div className="bg-white">
+      <div className="pt-6">
+        {/* Product info */}
+        <div className="max-w-2xl mx-auto pt-10 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:pt-16 lg:pb-24 lg:px-8 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8">
+          <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl">
+              {product.name}
+            </h1>
+            {/* Reviews */}
+            <div className="mt-6">
+              <h3 className="sr-only">Reviews</h3>
+              <div className="flex items-center">
+                <div className="flex items-center">
+                  {[0, 1, 2, 3, 4].map((rating) => (
+                    <StarIcon
+                      key={rating}
+                      className={classNames(
+                        reviews.average > rating
+                          ? "text-gray-900"
+                          : "text-gray-200",
+                        "h-5 w-5 flex-shrink-0"
+                      )}
+                      aria-hidden="true"
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
 
-      <div className="max-w-2xl mx-auto py-8 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-800 ">
-          All Information on ({locationtitle})
-        </h2>
-
-        <div className="mt-6 ">
-          {dlocation.map((location, index) => (
-            <div key={index}>
-              <img src={location.image} alt={location.image} />
-              {location.title}
-              City: {location.locationname}
-              Opening hours: {location.openhourse}
-              {location.description}
-              {location.email}
-              {location.phone}
-              {location.website}
-              <div>
-                <ReactStars
-                  count={location.rating}
-                  size={24}
-                  edit={false}
-                  value={location.rating}
-                  isHalf={true}
-                  emptyIcon={<i className="far fa-star"></i>}
-                  halfIcon={<i className="fa fa-star-half-alt"></i>}
-                  fullIcon={<i className="fa fa-star"></i>}
-                  activeColor="#ffd700"
+          {/* Options */}
+          <div className="mt-4 lg:mt-0 lg:row-span-3">
+            <h2 className="sr-only">Product information</h2>
+            {/* Image gallery */}
+            <div className="mt-6 max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-3 lg:gap-x-8">
+              <div className="aspect-w-3 aspect-h-4 rounded-lg overflow-hidden lg:block">
+                <img
+                  src={product.images[0].src}
+                  alt={product.images[0].alt}
+                  className="w-full h-full object-center object-cover"
                 />
               </div>
             </div>
-          ))}
+          </div>
+
+          <div className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+            {/* Description and details */}
+            <div>
+              <h3 className="sr-only">Description</h3>
+
+              <div className="space-y-6">
+                <p className="text-base text-gray-900">{product.description}</p>
+              </div>
+            </div>
+
+            <div className="mt-10">
+              <h2 className="text-sm font-medium text-gray-900">Details</h2>
+
+              <div className="mt-4 space-y-6">
+                <p className="text-sm text-gray-600">{product.details}</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

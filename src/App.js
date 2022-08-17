@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/locations" element={<Locations />} />
-        <Route path="/location/:locationtitle" element={<SingleLocation />} />
+        <Route path="/locations/:locationtitle" element={<SingleLocation />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/:id" element={<ViewCityPlasess />} />

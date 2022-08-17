@@ -3,6 +3,7 @@ import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import ReactStars from "react-rating-stars-component";
 import ReactLoading from "react-loading";
+import { Link } from "react-router-dom";
 
 export default function Example() {
   const [location, Setlocation] = useState([]);
@@ -42,9 +43,9 @@ export default function Example() {
           </h2>
 
           <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8 ">
-            {location.map((location) => (
+            {location.map((location, index) => (
               <div
-                key={location.lid}
+                key={index}
                 className="group relative bg-cyan-200 rounded-md border border-gray-400 shadow-md"
               >
                 <div className="w-full min-h-8 bg-gray-200 aspect-w-1 aspect-h-1  rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
@@ -57,8 +58,9 @@ export default function Example() {
                           height={400}
                           width={400}
                         />
-                      ) : location.image
-                      
+                      ) : (
+                        location.image
+                      )
                     }
                     alt={location.image}
                     className="w-full h-full object-center object-cover lg:w-full lg:h-full"
@@ -67,10 +69,11 @@ export default function Example() {
                 <div className="mt-2 flex justify-between px-3 py-1">
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900">
-                      <a href={location.href}>
+                      <Link to={`/locations/${location.title}`}>
+                        {" "}
                         <span aria-hidden="true" className="absolute inset-0" />
-                        {location.title}
-                      </a>
+                      </Link>
+                      {location.title}
                     </h3>
                   </div>
                   <p className="text-sm font-medium mt-1 text-gray-900">
@@ -81,8 +84,6 @@ export default function Example() {
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900">
                       <a href={location.href}>
-                        <span aria-hidden="true" className="absolute inset-0" />
-
                         <ReactStars
                           count={location.rating}
                           size={24}

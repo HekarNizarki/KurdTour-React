@@ -71,7 +71,7 @@ export default function Example() {
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8">
           {/* Duhok location */}
           <div
-            key={1}
+            key={1000}
             className="group relative bg-cyan-200 rounded-md border border-gray-400 shadow-md"
           >
             <div className="w-full  min-h-8 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
@@ -99,7 +99,7 @@ export default function Example() {
 
           {/* Hawler location */}
           <div
-            key={2}
+            key={2000}
             className="group relative bg-cyan-200 rounded-md border border-gray-400 shadow-md"
           >
             <div className="w-full  min-h-8 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
@@ -127,7 +127,7 @@ export default function Example() {
 
           {/* Sulaimany location */}
           <div
-            key={1}
+            key={3000}
             className="group relative bg-cyan-200 rounded-md border border-gray-400 shadow-md"
           >
             <div className="w-full  min-h-8 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">

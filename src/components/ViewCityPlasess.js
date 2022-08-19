@@ -10,8 +10,6 @@ export default function ViewCityPlasess() {
   const [dlocation, Setdlocation] = useState([]);
   const { id } = useParams();
 
- 
-
   useEffect(() => {
     // const locationCollection = collection(db, "Location");
     // const getAllLocations = async () => {
@@ -48,7 +46,7 @@ export default function ViewCityPlasess() {
         </h2>
 
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8">
-          {dlocation.map((location,index) => (
+          {dlocation.map((location, index) => (
             <div
               key={index}
               className="group relative bg-cyan-200 rounded-md border border-gray-400 shadow-md"
@@ -63,10 +61,11 @@ export default function ViewCityPlasess() {
               <div className="mt-2 flex justify-between p-3">
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900">
-                    <a href={location.href}>
+                    <Link to={`/locations/${location.title}`}>
+                      {" "}
                       <span aria-hidden="true" className="absolute inset-0" />
-                      {location.title}
-                    </a>
+                    </Link>
+                    {location.title}
                   </h3>
                 </div>
                 <p className="text-sm font-medium mt-1 text-gray-900">
@@ -76,21 +75,17 @@ export default function ViewCityPlasess() {
               <div className="mt-2 flex justify-between px-3 pb-2">
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900">
-                    <a href={location.href}>
-                      <span aria-hidden="true" className="absolute inset-0" />
-
-                      <ReactStars
-                        count={location.rating}
-                        size={24}
-                        edit={false}
-                        value={location.rating}
-                        isHalf={true}
-                        emptyIcon={<i className="far fa-star"></i>}
-                        halfIcon={<i className="fa fa-star-half-alt"></i>}
-                        fullIcon={<i className="fa fa-star"></i>}
-                        activeColor="#ffd700"
-                      />
-                    </a>
+                    <ReactStars
+                      count={location.rating}
+                      size={24}
+                      edit={false}
+                      value={location.rating}
+                      isHalf={true}
+                      emptyIcon={<i className="far fa-star"></i>}
+                      halfIcon={<i className="fa fa-star-half-alt"></i>}
+                      fullIcon={<i className="fa fa-star"></i>}
+                      activeColor="#ffd700"
+                    />
                   </h3>
                 </div>
                 <p className="text-xs font-medium mt-1 text-gray-900 sm:text-sm md:text-sm">

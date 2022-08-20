@@ -5,7 +5,7 @@ import { collection, onSnapshot, query, where } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
-import { MapContainer, TileLayer, Marker } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "./App.css";
 
 export default function Example() {
@@ -138,16 +138,15 @@ export default function Example() {
                   <div className="container w-full h-96 object-left object-cover">
                     <MapContainer
                       center={[location.loca, location.locl]}
-                      zoom={30}
+                      zoom={32}
                     >
                       <TileLayer
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                       />
-                      <Marker
-                        key={1}
-                        position={[location.loca, location.locl]}
-                      />
+                      <Marker position={[location.loca, location.locl]}>
+                        <Popup>{location.title}</Popup>
+                      </Marker>
                     </MapContainer>
                   </div>
                 </div>

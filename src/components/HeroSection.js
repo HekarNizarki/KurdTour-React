@@ -10,7 +10,7 @@ export default function HeroSection() {
           <span className="block text-yellow-600 font-extrabold md:text-6xl">
             Kurd Tour
           </span>
-          Explore then an explored
+          Explore the unexplored
         </h2>
         <p className="text-2xl text-gray-500 mt-3">
           This website is specialized with viewing the most pupilar tourist

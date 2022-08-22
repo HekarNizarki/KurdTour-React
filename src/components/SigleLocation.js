@@ -7,27 +7,6 @@ import { Link } from "react-router-dom";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "./App.css";
-import {
-  EmailIcon,
-  FacebookIcon,
-  // LinkedinIcon,
-  // PinterestIcon,
-  // TelegramIcon,
-  TwitterIcon,
-  // ViberIcon,
-  // WhatsappIcon,
-} from "react-share";
-
-import {
-  EmailShareButton,
-  FacebookShareButton,
-  // LinkedinShareButton,
-  // PinterestShareButton,
-  // TelegramShareButton,
-  TwitterShareButton,
-  // ViberShareButton,
-  // WhatsappShareButton,
-} from "react-share";
 
 export default function Example() {
   const [dlocation, Setdlocation] = useState([]);
@@ -168,34 +147,9 @@ export default function Example() {
                     </MapContainer>
                   </div>
                   <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl pb-3">
-                    Share this post :
+                    Share this post:
                   </h1>
                 </div>
-
-                <FacebookShareButton
-                  quote={location.title}
-                  subject={location.title}
-                  url={window.location.href}
-                  hashtag={[location.title, "WeCode"]}
-                >
-                  <FacebookIcon size={60} round={true} />
-                </FacebookShareButton>
-
-                <EmailShareButton
-                  subject={location.title}
-                  url={navigator.clipboard.writeText(window.location.href)}
-                >
-                  <EmailIcon size={60} round={true} />
-                </EmailShareButton>
-                <TwitterShareButton
-                  url={navigator.clipboard.writeText(window.location.href)}
-                  title={location.title}
-                  via="WeCode"
-                  hashtags={["wecode", "javascript", "sharing", "content"]}
-                >
-                  {" "}
-                  <TwitterIcon size={60} round={true} />
-                </TwitterShareButton>
               </div>
             </div>
           </div>

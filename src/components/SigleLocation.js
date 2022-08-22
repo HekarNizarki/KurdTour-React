@@ -10,23 +10,23 @@ import "./App.css";
 import {
   EmailIcon,
   FacebookIcon,
-  LinkedinIcon,
-  PinterestIcon,
-  TelegramIcon,
+  // LinkedinIcon,
+  // PinterestIcon,
+  // TelegramIcon,
   TwitterIcon,
-  ViberIcon,
-  WhatsappIcon,
+  // ViberIcon,
+  // WhatsappIcon,
 } from "react-share";
 
 import {
   EmailShareButton,
   FacebookShareButton,
-  LinkedinShareButton,
-  PinterestShareButton,
-  TelegramShareButton,
+  // LinkedinShareButton,
+  // PinterestShareButton,
+  // TelegramShareButton,
   TwitterShareButton,
-  ViberShareButton,
-  WhatsappShareButton,
+  // ViberShareButton,
+  // WhatsappShareButton,
 } from "react-share";
 
 export default function Example() {

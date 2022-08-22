@@ -167,7 +167,9 @@ export default function Example() {
                       </Marker>
                     </MapContainer>
                   </div>
-                  Shear this content
+                  <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl pb-3">
+                    Share this post
+                  </h1>
                 </div>
 
                 <FacebookShareButton

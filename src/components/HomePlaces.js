@@ -60,7 +60,7 @@ export default function Example() {
   return (
     <div className="bg-teal-100">
       <div className="max-w-2xl mx-auto pt-16 px-4 sm:pt-24 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-800 ">
+        <h2 className="text-3xl font-bold tracking-tight text-yellow-600 ">
           Find All Locations that interest you
           {dlocation.title}
         </h2>
@@ -72,7 +72,7 @@ export default function Example() {
           {/* Duhok location */}
           <div
             key={1000}
-            className="group relative bg-cyan-200 rounded-md border border-gray-400 shadow-md"
+            className="group relative bg-cyan-800 rounded-md border border-gray-400 shadow-md"
           >
             <div className="w-full  min-h-8 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
               <img
@@ -83,14 +83,14 @@ export default function Example() {
             </div>
             <div className="mt-2 flex justify-between p-3">
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 ">
+                <h3 className="text-xl font-semibold text-gray-200 ">
                   <Link to={`/${Duhok}`}>
                     <span aria-hidden="true" className="absolute inset-0" />
                     Duhok
                   </Link>
                 </h3>
               </div>
-              <p className="text-sm font-medium mt-1 text-gray-900">
+              <p className="text-sm font-medium mt-1 text-gray-200">
                 {dlingth} Locations
               </p>
             </div>
@@ -100,7 +100,7 @@ export default function Example() {
           {/* Hawler location */}
           <div
             key={2000}
-            className="group relative bg-cyan-200 rounded-md border border-gray-400 shadow-md"
+            className="group relative bg-cyan-800 rounded-md border border-gray-400 shadow-md"
           >
             <div className="w-full  min-h-8 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
               <img
@@ -111,14 +111,14 @@ export default function Example() {
             </div>
             <div className="mt-2 flex justify-between p-3">
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 ">
+                <h3 className="text-xl font-semibold text-gray-200 ">
                   <Link to={`/${Erbil}`}>
                     <span aria-hidden="true" className="absolute inset-0" />
                     Erbil
                   </Link>
                 </h3>
               </div>
-              <p className="text-sm font-medium mt-1 text-gray-900">
+              <p className="text-sm font-medium mt-1 text-gray-200">
                 {elingth} Locations
               </p>
             </div>
@@ -128,7 +128,7 @@ export default function Example() {
           {/* Sulaimany location */}
           <div
             key={3000}
-            className="group relative bg-cyan-200 rounded-md border border-gray-400 shadow-md"
+            className="group relative bg-cyan-800 rounded-md border border-gray-400 shadow-md"
           >
             <div className="w-full  min-h-8 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
               <img
@@ -139,14 +139,14 @@ export default function Example() {
             </div>
             <div className="mt-2 flex justify-between p-3">
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 ">
+                <h3 className="text-xl font-semibold text-gray-200 ">
                   <Link to={`/${Sulaimany}`}>
                     <span aria-hidden="true" className="absolute inset-0" />
                     Sulaimaniya
                   </Link>
                 </h3>
               </div>
-              <p className="text-sm font-medium mt-1 text-gray-900">
+              <p className="text-sm font-medium mt-1 text-gray-200">
                 {slingth} Locations
               </p>
             </div>

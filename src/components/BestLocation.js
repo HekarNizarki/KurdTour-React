@@ -35,7 +35,7 @@ export default function BestLocation() {
   return (
     <div className="bg-teal-100">
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-800 ">
+        <h2 className="text-3xl font-bold tracking-tight text-yellow-600 ">
           Best locations that interest you
         </h2>
         <h2 className="text-xl tracking-tight text-gray-500  mt-4">
@@ -46,7 +46,7 @@ export default function BestLocation() {
           {location.map((location, index) => (
             <div
               key={index}
-              className="group relative bg-cyan-200 rounded-md border border-gray-400 shadow-md"
+              className="group relative bg-cyan-800 rounded-md border border-gray-400 shadow-md"
             >
               <div className="w-full min-h-8 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                 <img
@@ -57,20 +57,20 @@ export default function BestLocation() {
               </div>
               <div className="mt-2 flex justify-between p-3">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 ">
+                  <h3 className="text-xl font-semibold text-gray-200 ">
                     <Link to={`/locations/${location.title}`}>
                       <span aria-hidden="true" className="absolute inset-0" />
                     </Link>
                     {location.title}
                   </h3>
                 </div>
-                <p className="text-sm font-medium mt-1 text-gray-900">
+                <p className="text-sm font-medium mt-1 text-gray-200">
                   City: {location.locationname}
                 </p>
               </div>
               <div className="mt-2 flex justify-between px-3 pb-2">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900">
+                  <h3 className="text-xl font-semibold text-gray-200">
                     <ReactStars
                       count={location.rating}
                       size={24}
@@ -84,7 +84,7 @@ export default function BestLocation() {
                     />
                   </h3>
                 </div>
-                <p className="text-xs font-medium mt-1 text-gray-900 sm:text-sm md:text-sm">
+                <p className="text-xs font-medium mt-1 text-gray-200 sm:text-sm md:text-sm">
                   Opening hours: {location.openhourse}
                 </p>
               </div>

@@ -13,7 +13,7 @@ export default function Example() {
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const [itemsPerPage, setItemsPerPage] = useState(6);
+  const [itemsPerPage] = useState(6);
   const nextButton = (
     <button className="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
       <svg
@@ -64,12 +64,13 @@ export default function Example() {
     /* calculations for the react paginate */
 
     const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+    //console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(location.slice(itemOffset, endOffset));
 
-    console.log("current items:", currentItems);
+   // console.log("current items:", currentItems);
     setPageCount(Math.ceil(location.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage, location]);
+    
+  }, [itemOffset, itemsPerPage, location ,currentItems]);
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
@@ -78,7 +79,7 @@ export default function Example() {
       `User requested page number ${event.selected}, which is offset ${newOffset}`
     );
     setItemOffset(newOffset);
-  };
+ };
 
   if (!currentItems) {
     return (

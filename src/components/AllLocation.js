@@ -80,7 +80,7 @@ export default function Example() {
     setItemOffset(newOffset);
   };
 
-  if (!location) {
+  if (!currentItems) {
     return (
       <div className="flex flex-row justify-center items-center ">
         <ReactLoading

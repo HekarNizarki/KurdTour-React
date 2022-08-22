@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "./App.css";
+import { RWebShare } from "react-web-share";
 
 export default function Example() {
   const [dlocation, Setdlocation] = useState([]);
@@ -146,10 +147,29 @@ export default function Example() {
                       </Marker>
                     </MapContainer>
                   </div>
-                  <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl pb-3">
-                    Share this post:
-                  </h1>
                 </div>
+              </div>
+              <div>
+                <RWebShare
+                  data={{
+                    text: `${location.description}`,
+                    url: `${window.location.href}`,
+                    title: `${location.title}`,
+                  }}
+                  sites={[
+                    "facebook",
+                    "twitter",
+                    "whatsapp",
+                    "telegram",
+                    "linkedin",
+                    "mail",
+                  ]}
+                  onClick={() => console.log("shared successfully!")}
+                >
+                  <button className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl pb-3">
+                    Share this post 🔗
+                  </button>
+                </RWebShare>
               </div>
             </div>
           </div>

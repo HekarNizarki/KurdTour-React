@@ -45,28 +45,26 @@ export default function Example() {
           <div className="pt-6">
             {/* Product info */}
             <div className="max-w-5xl mx-auto pt-10 pb-9 px-3 sm:px-6 ">
-              <div className="lg:border-r lg:pr-8">
-                <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl">
-                  {location.title}
-                </h1>
-                {/* Reviews */}
-                <div className="mt-6">
-                  <h3 className="sr-only">Reviews</h3>
+              <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl">
+                {location.title}
+              </h1>
+              {/* Reviews */}
+              <div className="mt-6">
+                <h3 className="sr-only">Reviews</h3>
+                <div className="flex items-center">
                   <div className="flex items-center">
-                    <div className="flex items-center">
-                      <div>
-                        <ReactStars
-                          count={location.rating}
-                          size={30}
-                          edit={false}
-                          value={location.rating}
-                          isHalf={true}
-                          emptyIcon={<i className="far fa-star"></i>}
-                          halfIcon={<i className="fa fa-star-half-alt"></i>}
-                          fullIcon={<i className="fa fa-star"></i>}
-                          activeColor="#ffd700"
-                        />
-                      </div>
+                    <div>
+                      <ReactStars
+                        count={location.rating}
+                        size={30}
+                        edit={false}
+                        value={location.rating}
+                        isHalf={true}
+                        emptyIcon={<i className="far fa-star"></i>}
+                        halfIcon={<i className="fa fa-star-half-alt"></i>}
+                        fullIcon={<i className="fa fa-star"></i>}
+                        activeColor="#ffd700"
+                      />
                     </div>
                   </div>
                 </div>
@@ -86,7 +84,7 @@ export default function Example() {
                 </div>
               </div>
 
-              <div className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
+              <div className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1  lg:border-gray-200 lg:pr-8">
                 {/* Description and details */}
                 <div>
                   <div className="space-y-6">

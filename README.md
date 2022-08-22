@@ -14,6 +14,6 @@ This project is specialized with view the most tourist location in Kurdistan reg
 - Tailwind
 - react-router
 - react-rating-stars-component
-- react Pagination
+- react-paginate
 
 ## Screenshots of application

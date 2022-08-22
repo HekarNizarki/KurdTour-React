@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
-    <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 mt-8 md:mt-10 p-2 pb-14">
+    <div className="bg-teal-50 container mx-auto grid grid-cols-1 md:grid-cols-2 mt-8 md:mt-10 p-2 pb-14 ">
       <div className=" flex flex-col  justify-center mb-3 ml-1">
         {""}
         <h2 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-5xl">
@@ -16,7 +16,7 @@ export default function HeroSection() {
           This website is specialized with viewing the most pupilar tourist
           location in Kurdistan.{" "}
         </p>
-        <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+        <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start bg-teal-50">
           <div className="rounded-md shadow">
             <Link
               to="/locations"
@@ -35,9 +35,9 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      <div className="pb-5 ">
+      <div className="pb-5  bg-teal-50">
         <img
-          className="h-full w-auto object-cover"
+          className="h-full w-auto object-cover bg-teal-50"
           src="https://www.rudaw.net/ContentFilesArchive/622613Image1.jpg?version=4427631"
           alt=""
         />

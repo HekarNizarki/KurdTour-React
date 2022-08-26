@@ -74,7 +74,7 @@ export default function Example() {
             key={1000}
             className="group relative bg-cyan-800 rounded-md border border-gray-400 shadow-md"
           >
-            <div className="w-full  min-h-8 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+            <div className="w-full  min-h-8 aspect-w-1 aspect-h-1  overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/2/26/City_of_Duhok.jpg"
                 alt="Duhok"
@@ -102,7 +102,7 @@ export default function Example() {
             key={2000}
             className="group relative bg-cyan-800 rounded-md border border-gray-400 shadow-md"
           >
-            <div className="w-full  min-h-8 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+            <div className="w-full  min-h-8 aspect-w-1 aspect-h-1  overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
               <img
                 src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/fb/e3/3a/photo1jpg.jpg?w=1200&h=-1&s=1"
                 alt="Hawler"
@@ -130,7 +130,7 @@ export default function Example() {
             key={3000}
             className="group relative bg-cyan-800 rounded-md border border-gray-400 shadow-md"
           >
-            <div className="w-full  min-h-8 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+            <div className="w-full  min-h-8 aspect-w-1 aspect-h-1  overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
               <img
                 src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/44/18/c1/this-beautiful-resort.jpg?w=1200&h=-1&s=1"
                 alt="Duhok"

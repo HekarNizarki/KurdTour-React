@@ -48,7 +48,7 @@ export default function BestLocation() {
               key={index}
               className="group relative bg-cyan-800 rounded-md border border-gray-400 shadow-md"
             >
-              <div className="w-full min-h-8 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+              <div className="w-full min-h-8 bg-gray-200 aspect-w-1 aspect-h-1  overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                 <img
                   src={location.image}
                   alt={location.image}

@@ -41,17 +41,17 @@ export default function Example() {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <img
-                    className="block lg:hidden h-8 w-auto"
+                    className="block lg:hidden h-6 w-auto "
                     src={Logo}
                     alt="Workflow"
                   />
 
                   <img
-                    className="hidden lg:block h-8 w-auto"
+                    className="hidden lg:block h-7 mr-1 w-auto"
                     src={Logo}
                     alt="Workflow"
                   />
-                  <p className="font-serif text-xl font-semibold mx-2">
+                  <p className="font-serif text-lg font-semibold mx-1 mr-16 md:mr-0">
                     KurdTour
                   </p>
                 </div>
@@ -141,10 +141,10 @@ export default function Example() {
                 </div>
               ) : (
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                  <button className="h-12 w-full flex items-center justify-center mr-4 py-3 border border-transparent text-sm font-medium rounded-md text-black bg-yellow-500 hover:bg-yellow-400">
+                  <button className="h-9 w-14 flex items-center justify-center mr-2 py-3 border border-transparent text-xs font-medium rounded-md text-black bg-yellow-500 hover:bg-yellow-400 md:text-sm md:w-20 md:mr-4 md:h-12">
                     Login
                   </button>
-                  <button className="h-12 w-52 flex items-center justify-center  py-3 border border-transparent text-sm font-medium rounded-md text-black bg-gray-200 hover:bg-gray-300">
+                  <button className="h-9 w-14 flex items-center justify-center  py-3 border border-transparent text-xs font-medium rounded-md text-black bg-gray-200 hover:bg-gray-300 md:text-sm md:w-20 md:h-12">
                     Sign Up
                   </button>
                 </div>

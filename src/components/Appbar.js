@@ -1,7 +1,9 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import {  MenuIcon, XIcon } from "@heroicons/react/outline";
+
+import { BiHeart } from "react-icons/bi";
 
 import Logo from "../assets/logo192.png";
 import { Link } from "react-router-dom";
@@ -77,7 +79,8 @@ export default function Example() {
                   className=" border-2 p-1 rounded-full text-gray-600 hover:bg-yellow-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                 >
                   <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
+
+                  <BiHeart className="h-6 w-6" aria-hidden="true" />
                 </button>
 
                 {/* Profile dropdown */}

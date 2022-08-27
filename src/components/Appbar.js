@@ -175,9 +175,10 @@ export default function Example() {
                     <DialogTitle>Login to your account</DialogTitle>
                     <DialogContent>
                       <DialogContentText>
-                        To subscribe to this website, please enter your email
-                        address here. We will send updates occasionally.
+                        Please enter your E-mail and password to open your
+                        account
                       </DialogContentText>
+
                       <TextField
                         autoFocus
                         margin="dense"
@@ -221,11 +222,19 @@ export default function Example() {
                     <DialogTitle>Sign up for new account</DialogTitle>
                     <DialogContent>
                       <DialogContentText>
-                        To subscribe to this website, please enter your email
-                        address here. We will send updates occasionally.
+                        Please enter your Full name and E-mail and password to
+                        get new account
                       </DialogContentText>
                       <TextField
                         autoFocus
+                        margin="dense"
+                        id="name"
+                        label="Full Name"
+                        type="text"
+                        fullWidth
+                        variant="standard"
+                      />
+                      <TextField
                         margin="dense"
                         id="name"
                         label="Email Address"
@@ -253,7 +262,7 @@ export default function Example() {
                         className="h-9 w-14 flex items-center justify-center mr-2 py-3 border border-transparent text-xs font-medium rounded-md text-black bg-yellow-500 hover:bg-yellow-400 md:text-sm md:w-20 md:mr-4 md:h-12"
                         onClick={handleClosesign}
                       >
-                        Login
+                        Sign up
                       </button>
                     </DialogActions>
                   </Dialog>

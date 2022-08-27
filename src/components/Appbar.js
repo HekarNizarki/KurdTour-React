@@ -26,14 +26,23 @@ function classNames(...classes) {
 let isLogin = false;
 
 export default function Example() {
-  const [oppen, setOpen] = useState(false);
+  const [openlog, setOpenlog] = useState(false);
+  const [opensig, setOpensig] = useState(false);
 
   const handleClickOpen = () => {
-    setOpen(true);
+    setOpenlog(true);
   };
 
   const handleClose = () => {
-    setOpen(false);
+    setOpenlog(false);
+  };
+
+  const handleClickOpensign = () => {
+    setOpensig(true);
+  };
+
+  const handleClosesign = () => {
+    setOpensig(false);
   };
 
   return (
@@ -162,7 +171,7 @@ export default function Example() {
                   >
                     Login
                   </button>
-                  <Dialog open={oppen} onClose={handleClose}>
+                  <Dialog open={openlog} onClose={handleClose}>
                     <DialogTitle>Login to your account</DialogTitle>
                     <DialogContent>
                       <DialogContentText>
@@ -202,9 +211,52 @@ export default function Example() {
                       </button>
                     </DialogActions>
                   </Dialog>
-                  <button className="h-9 w-14 flex items-center justify-center  py-3 border border-transparent text-xs font-medium rounded-md text-black bg-gray-200 hover:bg-gray-300 md:text-sm md:w-20 md:h-12">
+                  <button
+                    onClick={handleClickOpensign}
+                    className="h-9 w-14 flex items-center justify-center  py-3 border border-transparent text-xs font-medium rounded-md text-black bg-gray-200 hover:bg-gray-300 md:text-sm md:w-20 md:h-12"
+                  >
                     Sign Up
                   </button>
+                  <Dialog open={opensig} onClose={handleClosesign}>
+                    <DialogTitle>Sign up for new account</DialogTitle>
+                    <DialogContent>
+                      <DialogContentText>
+                        To subscribe to this website, please enter your email
+                        address here. We will send updates occasionally.
+                      </DialogContentText>
+                      <TextField
+                        autoFocus
+                        margin="dense"
+                        id="name"
+                        label="Email Address"
+                        type="email"
+                        fullWidth
+                        variant="standard"
+                      />
+                      <TextField
+                        margin="dense"
+                        id="name"
+                        label="Password"
+                        type="password"
+                        fullWidth
+                        variant="standard"
+                      />
+                    </DialogContent>
+                    <DialogActions>
+                      <button
+                        onClick={handleClosesign}
+                        className="h-9 w-14 flex items-center justify-center  py-3 border border-transparent text-xs font-medium rounded-md text-black bg-gray-200 hover:bg-gray-300 md:text-sm md:w-20 md:h-12"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        className="h-9 w-14 flex items-center justify-center mr-2 py-3 border border-transparent text-xs font-medium rounded-md text-black bg-yellow-500 hover:bg-yellow-400 md:text-sm md:w-20 md:mr-4 md:h-12"
+                        onClick={handleClosesign}
+                      >
+                        Login
+                      </button>
+                    </DialogActions>
+                  </Dialog>
                 </div>
               )}
               {/* Profile logic end*/}

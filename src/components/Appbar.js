@@ -1,12 +1,17 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
+import { useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
-
-import { BiHeart } from "react-icons/bi";
-
-import Logo from "../assets/logo192.png";
 import { Link } from "react-router-dom";
+import { BiHeart } from "react-icons/bi";
+import Logo from "../assets/logo192.png";
+import TextField from "@mui/material/TextField";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 
 const navigation = [
   { name: "Home", href: "/", current: false },
@@ -18,9 +23,19 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-const isLogin = false;
+let isLogin = false;
 
 export default function Example() {
+  const [oppen, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Disclosure as="nav" className="bg-gray-50 border shadow-sm">
       {({ open }) => (
@@ -77,7 +92,7 @@ export default function Example() {
               </div>
 
               {/* Profile logic start*/}
-              {isLogin ? (
+              {isLogin === true ? (
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                   <button
                     type="button"
@@ -141,9 +156,52 @@ export default function Example() {
                 </div>
               ) : (
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                  <button className="h-9 w-14 flex items-center justify-center mr-2 py-3 border border-transparent text-xs font-medium rounded-md text-black bg-yellow-500 hover:bg-yellow-400 md:text-sm md:w-20 md:mr-4 md:h-12">
+                  <button
+                    onClick={handleClickOpen}
+                    className="h-9 w-14 flex items-center justify-center mr-2 py-3 border border-transparent text-xs font-medium rounded-md text-black bg-yellow-500 hover:bg-yellow-400 md:text-sm md:w-20 md:mr-4 md:h-12"
+                  >
                     Login
                   </button>
+                  <Dialog open={oppen} onClose={handleClose}>
+                    <DialogTitle>Login to your account</DialogTitle>
+                    <DialogContent>
+                      <DialogContentText>
+                        To subscribe to this website, please enter your email
+                        address here. We will send updates occasionally.
+                      </DialogContentText>
+                      <TextField
+                        autoFocus
+                        margin="dense"
+                        id="name"
+                        label="Email Address"
+                        type="email"
+                        fullWidth
+                        variant="standard"
+                      />
+                      <TextField
+                        margin="dense"
+                        id="name"
+                        label="Password"
+                        type="password"
+                        fullWidth
+                        variant="standard"
+                      />
+                    </DialogContent>
+                    <DialogActions>
+                      <button
+                        onClick={handleClose}
+                        className="h-9 w-14 flex items-center justify-center  py-3 border border-transparent text-xs font-medium rounded-md text-black bg-gray-200 hover:bg-gray-300 md:text-sm md:w-20 md:h-12"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        className="h-9 w-14 flex items-center justify-center mr-2 py-3 border border-transparent text-xs font-medium rounded-md text-black bg-yellow-500 hover:bg-yellow-400 md:text-sm md:w-20 md:mr-4 md:h-12"
+                        onClick={handleClose}
+                      >
+                        Login
+                      </button>
+                    </DialogActions>
+                  </Dialog>
                   <button className="h-9 w-14 flex items-center justify-center  py-3 border border-transparent text-xs font-medium rounded-md text-black bg-gray-200 hover:bg-gray-300 md:text-sm md:w-20 md:h-12">
                     Sign Up
                   </button>

@@ -1,6 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
@@ -26,6 +26,10 @@ function classNames(...classes) {
 let isLogin = false;
 
 export default function Example() {
+  const emailref = useRef;
+  const passwordref = useRef;
+  const nameref = useRef;
+
   const [openlog, setOpenlog] = useState(false);
   const [opensig, setOpensig] = useState(false);
 
@@ -233,14 +237,16 @@ export default function Example() {
                         type="text"
                         fullWidth
                         variant="standard"
+                        ref={nameref}
                       />
                       <TextField
                         margin="dense"
-                        id="name"
+                        id="email"
                         label="Email Address"
                         type="email"
                         fullWidth
                         variant="standard"
+                        ref={emailref}
                       />
                       <TextField
                         margin="dense"
@@ -249,6 +255,7 @@ export default function Example() {
                         type="password"
                         fullWidth
                         variant="standard"
+                        ref={passwordref}
                       />
                     </DialogContent>
                     <DialogActions>

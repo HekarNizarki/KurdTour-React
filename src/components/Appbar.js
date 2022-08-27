@@ -1,6 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Link } from "react-router-dom";
@@ -12,7 +12,12 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
+import { auth } from "./Registaration/Authconfig";
 const navigation = [
   { name: "Home", href: "/", current: false },
   { name: "Locations", href: "/locations", current: false },
@@ -23,15 +28,40 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-let isLogin = false;
-
 export default function Example() {
-  const emailref = useRef;
-  const passwordref = useRef;
-  const nameref = useRef;
-
   const [openlog, setOpenlog] = useState(false);
   const [opensig, setOpensig] = useState(false);
+
+  const [registerEmail, setRegisterEmail] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+  const [loginEmail, setLoginEmail] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+  const [isLogin, setisLogin] = useState(false);
+
+  const register = async () => {
+    const user = await createUserWithEmailAndPassword(
+      auth,
+      registerEmail,
+      registerPassword
+    );
+    setisLogin(true);
+    handleClosesign();
+  };
+  const login = async () => {
+    const user = await signInWithEmailAndPassword(
+      auth,
+      loginEmail,
+      loginPassword
+    );
+    setisLogin(true);
+    handleClosesign();
+  };
+
+  const logout = async () => {
+    await signOut(auth);
+    setisLogin(false);
+    handleClose();
+  };
 
   const handleClickOpen = () => {
     setOpenlog(true);
@@ -107,14 +137,14 @@ export default function Example() {
               {/* Profile logic start*/}
               {isLogin === true ? (
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                  <button
-                    type="button"
+                  <Link
+                    to={"/favplases"}
                     className=" border-2 p-1 rounded-full text-gray-600 hover:bg-yellow-400 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                   >
                     <span className="sr-only">View notifications</span>
 
                     <BiHeart className="h-6 w-6 " aria-hidden="true" />
-                  </button>
+                  </Link>
 
                   <Menu as="div" className="ml-3 relative">
                     <div>
@@ -146,21 +176,21 @@ export default function Example() {
                                 "block px-4 py-2 text-sm text-gray-700 z-1000"
                               )}
                             >
-                              Your Profile
+                              {auth.currentUser.email}
                             </Link>
                           )}
                         </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
-                            <a
-                              href="/"
+                            <button
+                              onClick={logout}
                               className={classNames(
                                 active ? "bg-gray-100 z-1000" : "",
                                 "block px-4 py-2 text-sm text-gray-700 z-1000"
                               )}
                             >
                               Sign out
-                            </a>
+                            </button>
                           )}
                         </Menu.Item>
                       </Menu.Items>
@@ -191,6 +221,9 @@ export default function Example() {
                         type="email"
                         fullWidth
                         variant="standard"
+                        onChange={(event) => {
+                          setLoginEmail(event.target.value);
+                        }}
                       />
                       <TextField
                         margin="dense"
@@ -199,6 +232,9 @@ export default function Example() {
                         type="password"
                         fullWidth
                         variant="standard"
+                        onChange={(event) => {
+                          setLoginPassword(event.target.value);
+                        }}
                       />
                     </DialogContent>
                     <DialogActions>
@@ -210,7 +246,7 @@ export default function Example() {
                       </button>
                       <button
                         className="h-9 w-14 flex items-center justify-center mr-2 py-3 border border-transparent text-xs font-medium rounded-md text-black bg-yellow-500 hover:bg-yellow-400 md:text-sm md:w-20 md:mr-4 md:h-12"
-                        onClick={handleClose}
+                        onClick={login}
                       >
                         Login
                       </button>
@@ -237,7 +273,6 @@ export default function Example() {
                         type="text"
                         fullWidth
                         variant="standard"
-                        ref={nameref}
                       />
                       <TextField
                         margin="dense"
@@ -246,7 +281,9 @@ export default function Example() {
                         type="email"
                         fullWidth
                         variant="standard"
-                        ref={emailref}
+                        onChange={(event) => {
+                          setRegisterEmail(event.target.value);
+                        }}
                       />
                       <TextField
                         margin="dense"
@@ -255,7 +292,9 @@ export default function Example() {
                         type="password"
                         fullWidth
                         variant="standard"
-                        ref={passwordref}
+                        onChange={(event) => {
+                          setRegisterPassword(event.target.value);
+                        }}
                       />
                     </DialogContent>
                     <DialogActions>
@@ -267,7 +306,7 @@ export default function Example() {
                       </button>
                       <button
                         className="h-9 w-14 flex items-center justify-center mr-2 py-3 border border-transparent text-xs font-medium rounded-md text-black bg-yellow-500 hover:bg-yellow-400 md:text-sm md:w-20 md:mr-4 md:h-12"
-                        onClick={handleClosesign}
+                        onClick={register}
                       >
                         Sign up
                       </button>

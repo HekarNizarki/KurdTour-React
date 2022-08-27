@@ -39,7 +39,7 @@ export default function Example() {
   const [isLogin, setisLogin] = useState(false);
 
   const register = async () => {
-    const user = await createUserWithEmailAndPassword(
+     await createUserWithEmailAndPassword(
       auth,
       registerEmail,
       registerPassword
@@ -48,7 +48,7 @@ export default function Example() {
     handleClosesign();
   };
   const login = async () => {
-    const user = await signInWithEmailAndPassword(
+     await signInWithEmailAndPassword(
       auth,
       loginEmail,
       loginPassword

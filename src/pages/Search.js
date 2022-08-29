@@ -46,12 +46,14 @@ export default function BestLocation() {
         <h2 className="text-xl tracking-tight text-gray-500  mt-4">
           Collections of our best Locations
         </h2>
+        <div className="container w-auto p-6">
+          <Select
+            defaultValue={selectedOption.value}
+            onChange={setSelectedOption}
+            options={options}
+          />
+        </div>
 
-        <Select
-          defaultValue={selectedOption.value}
-          onChange={setSelectedOption}
-          options={options}
-        />
         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-1 lg:grid-cols-3 xl:gap-x-8">
           {location.map((location, index) => (
             <div

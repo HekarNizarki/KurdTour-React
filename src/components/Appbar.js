@@ -21,7 +21,7 @@ import { auth } from "./Registaration/Authconfig";
 const navigation = [
   { name: "Home", href: "/", current: false },
   { name: "Locations", href: "/locations", current: false },
-  { name: "Contact", href: "/contact", current: false },
+  { name: "Search", href: "/contact", current: false },
 ];
 
 function classNames(...classes) {
@@ -39,20 +39,12 @@ export default function Example() {
   const [isLogin, setisLogin] = useState(false);
 
   const register = async () => {
-     await createUserWithEmailAndPassword(
-      auth,
-      registerEmail,
-      registerPassword
-    );
+    await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
     setisLogin(true);
     handleClosesign();
   };
   const login = async () => {
-     await signInWithEmailAndPassword(
-      auth,
-      loginEmail,
-      loginPassword
-    );
+    await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
     setisLogin(true);
     handleClosesign();
   };
@@ -60,7 +52,7 @@ export default function Example() {
   const logout = async () => {
     await signOut(auth);
     setisLogin(false);
-    handleClose();
+    // handleClose();
   };
 
   const handleClickOpen = () => {
@@ -182,15 +174,17 @@ export default function Example() {
                         </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
-                            <button
-                              onClick={logout}
-                              className={classNames(
-                                active ? "bg-gray-100 z-1000" : "",
-                                "block px-4 py-2 text-sm text-gray-700 z-1000"
-                              )}
-                            >
-                              Sign out
-                            </button>
+                            <Link to="/">
+                              <button
+                                onClick={logout}
+                                className={classNames(
+                                  active ? "bg-gray-100 z-1000" : "",
+                                  "block px-4 py-2 text-sm text-gray-700 z-1000"
+                                )}
+                              >
+                                Sign out
+                              </button>
+                            </Link>
                           )}
                         </Menu.Item>
                       </Menu.Items>

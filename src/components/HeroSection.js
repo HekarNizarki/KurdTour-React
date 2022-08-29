@@ -27,7 +27,7 @@ export default function HeroSection() {
           </div>
           <div className="mt-3  sm:mt-0 sm:ml-3 ">
             <Link
-              to="/locations"
+              to="/contact"
               className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-gray-200 hover:bg-gray-300 md:py-4 md:text-lg md:px-10"
             >
               Search

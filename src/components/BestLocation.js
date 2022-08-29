@@ -52,7 +52,7 @@ export default function BestLocation() {
                 <img
                   src={location.image}
                   alt={location.image}
-                  className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                  className="w-full h-full object-center rounded-t-md object-cover lg:w-full lg:h-full"
                 />
               </div>
               <div className="mt-2 flex justify-between p-3">

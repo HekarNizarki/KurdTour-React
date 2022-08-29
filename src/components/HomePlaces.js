@@ -78,7 +78,7 @@ export default function Example() {
               <img
                 src="https://upload.wikimedia.org/wikipedia/commons/2/26/City_of_Duhok.jpg"
                 alt="Duhok"
-                className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                className="w-full h-full object-center rounded-t-md object-cover lg:w-full lg:h-full"
               />
             </div>
             <div className="mt-2 flex justify-between p-3">
@@ -106,7 +106,7 @@ export default function Example() {
               <img
                 src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/fb/e3/3a/photo1jpg.jpg?w=1200&h=-1&s=1"
                 alt="Hawler"
-                className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                className="w-full h-full object-center object-cover rounded-t-md lg:w-full lg:h-full"
               />
             </div>
             <div className="mt-2 flex justify-between p-3">
@@ -134,7 +134,7 @@ export default function Example() {
               <img
                 src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/44/18/c1/this-beautiful-resort.jpg?w=1200&h=-1&s=1"
                 alt="Duhok"
-                className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                className="w-full h-full object-center object-cover rounded-t-md lg:w-full lg:h-full"
               />
             </div>
             <div className="mt-2 flex justify-between p-3">

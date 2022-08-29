@@ -36,9 +36,9 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="pb-5  bg-teal-50">
+      <div className="pb-5 rounded-lg bg-teal-50">
         <img
-          className="h-full w-auto object-cover bg-teal-50"
+          className="h-full w-auto object-cover bg-teal-50 rounded-lg"
           src="https://www.rudaw.net/ContentFilesArchive/622613Image1.jpg?version=4427631"
           alt=""
         />

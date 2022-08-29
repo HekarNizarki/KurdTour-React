@@ -51,8 +51,9 @@ export default function Example() {
 
   const logout = async () => {
     await signOut(auth);
+
+    handleClose();
     setisLogin(false);
-    // handleClose();
   };
 
   const handleClickOpen = () => {
@@ -174,16 +175,15 @@ export default function Example() {
                         </Menu.Item>
                         <Menu.Item>
                           {({ active }) => (
-                            <Link to="/">
-                              <button
-                                onClick={logout}
-                                className={classNames(
-                                  active ? "bg-gray-100 z-1000" : "",
-                                  "block px-4 py-2 text-sm text-gray-700 z-1000"
-                                )}
-                              >
-                                Sign out
-                              </button>
+                            <Link
+                              to="/"
+                              onClick={logout}
+                              className={classNames(
+                                active ? "bg-gray-100 z-1000" : "",
+                                "block px-4 py-2 text-sm text-gray-700 z-1000"
+                              )}
+                            >
+                              Sign out
                             </Link>
                           )}
                         </Menu.Item>

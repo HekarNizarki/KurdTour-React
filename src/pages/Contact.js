@@ -38,7 +38,7 @@ export default function BestLocation() {
   }, [selectedOption]);
 
   return (
-    <div className="bg-teal-100">
+    <div className="bg-teal-50">
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
         <h2 className="text-3xl font-bold tracking-tight text-yellow-600 ">
           Search for locations that interest you
@@ -62,7 +62,7 @@ export default function BestLocation() {
                 <img
                   src={location.image}
                   alt={location.image}
-                  className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                  className="w-full h-full object-center object-cover rounded-t-md lg:w-full lg:h-full"
                 />
               </div>
               <div className="mt-2 flex justify-between p-3">

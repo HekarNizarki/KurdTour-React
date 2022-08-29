@@ -67,10 +67,9 @@ export default function Example() {
     //console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     setCurrentItems(location.slice(itemOffset, endOffset));
 
-   // console.log("current items:", currentItems);
+    // console.log("current items:", currentItems);
     setPageCount(Math.ceil(location.length / itemsPerPage));
-    
-  }, [itemOffset, itemsPerPage, location ,currentItems]);
+  }, [itemOffset, itemsPerPage, location, currentItems]);
 
   // Invoke when user click to request another page.
   const handlePageClick = (event) => {
@@ -79,22 +78,20 @@ export default function Example() {
     //   `User requested page number ${event.selected}, which is offset ${newOffset}`
     // );
     setItemOffset(newOffset);
- };
+  };
 
   if (!currentItems) {
     return (
-      <div className="flex flex-row justify-center items-center ">
-        <ReactLoading
-          type="spinningBubbles"
-          color="#FFFFFF"
-          height={400}
-          width={400}
-        />
-      </div>
+      <ReactLoading
+        type="spinningBubbles"
+        color="#FFFFFF"
+        height={400}
+        width={400}
+      />
     );
   } else {
     return (
-      <div className="bg-teal-100 pb-6">
+      <div className="bg-teal-50 pb-6">
         <div className="max-w-2xl mx-auto pt-16 px-4 sm:pt-24 sm:px-6 lg:max-w-7xl lg:px-8 text-center ">
           <h2 className="text-3xl font-bold tracking-tight text-yellow-600 ">
             Find locations that interest you
@@ -124,7 +121,7 @@ export default function Example() {
                       )
                     }
                     alt={location.image}
-                    className="w-full h-full object-center object-cover lg:w-full lg:h-full"
+                    className="w-full h-full object-center rounded-t-md object-cover lg:w-full lg:h-full"
                   />
                 </div>
                 <div className="mt-2 flex justify-between px-3 py-1">

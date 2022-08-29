@@ -2,6 +2,7 @@ import React from "react";
 import BestLocation from "../components/BestLocation";
 import HeroSection from "../components/HeroSection";
 import HomePlaces from "../components/HomePlaces";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <HeroSection />
       <HomePlaces />
       <BestLocation />
+      <Footer/>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 # KurdTour
 
-Explore then an explored.
+Explore the unexplored.
 
 ## About the application
 
@@ -9,12 +9,14 @@ This project is specialized with view the most tourist location in Kurdistan reg
 ## Technologies use it in application
 
 - firebase
-- axios
+- firestore
 - Material UI
 - Tailwind
 - react-router
 - react-rating-stars-component
 - react-paginate
 - react-web-share
+- react-leaflet
+- react-select
 
 ## Screenshots of application

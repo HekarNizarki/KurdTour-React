@@ -82,12 +82,14 @@ export default function Example() {
 
   if (!currentItems) {
     return (
-      <ReactLoading
-        type="spinningBubbles"
-        color="#FFFFFF"
-        height={400}
-        width={400}
-      />
+      <div className="flex items-center justify-center pt-24">
+        <ReactLoading
+          type="spinningBubbles"
+          color="#FDD017"
+          height={100}
+          width={100}
+        />
+      </div>
     );
   } else {
     return (

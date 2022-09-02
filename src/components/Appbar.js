@@ -51,7 +51,7 @@ export default function Example() {
     await addDoc(usercollectionRef, {
       name: registerName,
       email: registerEmail,
-      location: {},
+      lname: [],
     });
   };
   const login = async () => {

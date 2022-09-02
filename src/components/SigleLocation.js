@@ -166,7 +166,7 @@ export default function Example() {
                   ]}
                   onClick={() => console.log("shared successfully!")}
                 >
-                  <button className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl pt-9 pb-3">
+                  <button className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl pt-3 pb-3">
                     Share this post 🔗
                   </button>
                 </RWebShare>

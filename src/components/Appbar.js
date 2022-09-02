@@ -18,6 +18,8 @@ import {
   signOut,
 } from "firebase/auth";
 import { auth } from "./Registaration/Authconfig";
+import { db } from "../firebase";
+import { collection, addDoc } from "firebase/firestore";
 const navigation = [
   { name: "Home", href: "/", current: false },
   { name: "Locations", href: "/locations", current: false },
@@ -29,10 +31,14 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+  const usercollectionRef = collection(db, "users");
+
   const [openlog, setOpenlog] = useState(false);
   const [opensig, setOpensig] = useState(false);
 
   const [registerEmail, setRegisterEmail] = useState("");
+  const [registerName, setRegisterName] = useState("");
+
   const [registerPassword, setRegisterPassword] = useState("");
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -42,6 +48,11 @@ export default function Example() {
     await createUserWithEmailAndPassword(auth, registerEmail, registerPassword);
     setisLogin(true);
     handleClosesign();
+    await addDoc(usercollectionRef, {
+      name: registerName,
+      email: registerEmail,
+      location: {},
+    });
   };
   const login = async () => {
     await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
@@ -52,8 +63,8 @@ export default function Example() {
   const logout = async () => {
     await signOut(auth);
 
-    handleClose();
     setisLogin(false);
+    handleClose();
   };
 
   const handleClickOpen = () => {
@@ -163,7 +174,7 @@ export default function Example() {
                         <Menu.Item>
                           {({ active }) => (
                             <Link
-                              to="/profile"
+                              to={`/profile/${auth.currentUser.email}`}
                               className={classNames(
                                 active ? "bg-gray-100 z-1000" : "",
                                 "block px-4 py-2 text-sm text-gray-700 z-1000"
@@ -267,6 +278,9 @@ export default function Example() {
                         type="text"
                         fullWidth
                         variant="standard"
+                        onChange={(event) => {
+                          setRegisterName(event.target.value);
+                        }}
                       />
                       <TextField
                         margin="dense"

@@ -110,12 +110,14 @@ export default function Example() {
                   <img
                     src={
                       !location.image ? (
-                        <ReactLoading
-                          type="spinningBubbles"
-                          color="#FFFFFF"
-                          height={400}
-                          width={400}
-                        />
+                        <div className="items-center justify-center">
+                          <ReactLoading
+                            type="spinningBubbles"
+                            color="#FDD017"
+                            height={200}
+                            width={200}
+                          />
+                        </div>
                       ) : (
                         location.image
                       )

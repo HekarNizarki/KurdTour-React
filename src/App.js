@@ -19,11 +19,10 @@ function App() {
         <Route path="/favplases" element={<Favplases />} />
         <Route path="/locations/:locationtitle" element={<SingleLocation />} />
         <Route path="/contact" element={<Search />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/:idProfile" element={<Profile />} />
         <Route path="/:id" element={<ViewCityPlasess />} />
         <Route path="*" element={<p> no page to show </p>} />
       </Routes>
-      
     </div>
   );
 }

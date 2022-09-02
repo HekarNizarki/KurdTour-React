@@ -61,10 +61,7 @@ export default function Example() {
   };
 
   const logout = async () => {
-    await signOut(auth);
-
-    setisLogin(false);
-    handleClose();
+    await signOut(auth).then(setisLogin(false)).then(handleClose());
   };
 
   const handleClickOpen = () => {

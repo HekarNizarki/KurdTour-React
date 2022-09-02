@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { db } from "../firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, onSnapshot, query, where } from "firebase/firestore";
 import ReactStars from "react-rating-stars-component";
 import ReactLoading from "react-loading";
 import { Link } from "react-router-dom";
 import ReactPaginate from "react-paginate";
+import { useParams } from "react-router-dom";
 
 export default function Example() {
   const [location, Setlocation] = useState([]);
+  const { fav } = useParams();
 
   //pagination
   const [currentItems, setCurrentItems] = useState(null);
@@ -51,14 +53,15 @@ export default function Example() {
     </button>
   );
   useEffect(() => {
-    const locationCollection = collection(db, "Location");
-    const getLocations = async () => {
-      const data = await getDocs(locationCollection);
-      Setlocation(data.docs.map((doc) => ({ ...doc.data(), id: doc.lid })));
-    };
-
-    getLocations();
-  }, []);
+    onSnapshot(
+      query(collection(db, "Location"), where("title", "==", fav)),
+      (snapshot) => {
+        Setlocation(
+          snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.lid }))
+        );
+      }
+    );
+  }, [fav]);
 
   useEffect(() => {
     /* calculations for the react paginate */

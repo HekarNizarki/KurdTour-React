@@ -35,7 +35,7 @@ export default function Profile() {
         </div>
       ) : (
         <div>
-          <div className="flex flex-col justify-center items-center text-center container">
+          <div className="flex flex-col justify-center items-center text-center">
             {profile.map((pro, index) => (
               <div key={index}>
                 <div className="">

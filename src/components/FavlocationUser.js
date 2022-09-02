@@ -32,7 +32,7 @@ export default function FavlocationUser(props) {
         </div>
       ) : (
         <div>
-          <div className="justify-center items-center text-center container">
+          <div className="justify-center items-center text-center">
             <h2 className="text-3xl font-bold tracking-tight text-yellow-600 mt-9">
               Favorite location of User
             </h2>

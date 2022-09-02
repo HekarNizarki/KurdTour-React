@@ -1,7 +1,13 @@
 import { useState, useEffect } from "react";
 import ReactStars from "react-rating-stars-component";
 import { db } from "../firebase";
-import { collection, onSnapshot, query, where } from "firebase/firestore";
+import {
+  collection,
+  onSnapshot,
+  query,
+  where,
+  addDoc,
+} from "firebase/firestore";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
@@ -10,11 +16,19 @@ import "./App.css";
 import { RWebShare } from "react-web-share";
 
 export default function Example() {
+  const usercollectionRef = collection(db, "users");
+
   const [dlocation, Setdlocation] = useState([]);
   const { locationtitle } = useParams();
 
   // console.log("idddd", locationtitle);
 
+  const addFav = async () => {
+    await addDoc(usercollectionRef, {
+      lname: dlocation.findIndex[10],
+    });
+    console.log(dlocation.findIndex[5]);
+  };
   useEffect(() => {
     // const locationCollection = collection(db, "Location");
     // const getAllLocations = async () => {
@@ -171,6 +185,12 @@ export default function Example() {
                   </button>
                 </RWebShare>
               </div>
+              <button
+                onClick={addFav}
+                className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl pt-3 pb-3"
+              >
+                Add to Fav
+              </button>
             </div>
           </div>
         </div>

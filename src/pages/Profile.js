@@ -38,7 +38,12 @@ export default function Profile() {
             <div key={index}>
               {pro.name}
               {pro.email}
-              {JSON.stringify(pro.location)}
+              {/* {pro.location.data.map((loc, index) => (
+                <div key={index}>
+                  {loc.id}
+                  {loc.name}
+                </div>
+              ))} */}
             </div>
           ))}
         </div>

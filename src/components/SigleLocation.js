@@ -133,7 +133,7 @@ export default function Example() {
                 </div>
                 <div className="mt-10">
                   <h2 className="text-xl font-bold text-gray-900 pb-3">Map</h2>
-                  <div className="container w-full h-96 object-left object-cover">
+                  <div className="container w-full h-80 object-left object-cover">
                     <MapContainer
                       center={[location.loca, location.locl]}
                       zoom={32}
@@ -166,7 +166,7 @@ export default function Example() {
                   ]}
                   onClick={() => console.log("shared successfully!")}
                 >
-                  <button className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl pb-3">
+                  <button className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl pt-9 pb-3">
                     Share this post 🔗
                   </button>
                 </RWebShare>

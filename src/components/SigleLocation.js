@@ -8,6 +8,8 @@ import {
   where,
   addDoc,
 } from "firebase/firestore";
+import { auth } from "./Registaration/Authconfig";
+
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
@@ -21,20 +23,15 @@ export default function Example() {
   const [dlocation, Setdlocation] = useState([]);
   const { locationtitle } = useParams();
 
-  // console.log("idddd", locationtitle);
-
   const addFav = async () => {
     await addDoc(usercollectionRef, {
-      lname: dlocation.findIndex[10],
+      name: auth.currentUser.displayName,
+      email: auth.currentUser.email,
+      id: auth.currentUser.uid,
     });
-    console.log(dlocation.findIndex[5]);
+    console.log(auth.currentUser);
   };
   useEffect(() => {
-    // const locationCollection = collection(db, "Location");
-    // const getAllLocations = async () => {
-    //   const data = await getDocs(locationCollection);
-    //   Setlocation(data.docs.map((doc) => ({ ...doc.data(), id: doc.lid })));
-    // };
     onSnapshot(
       query(collection(db, "Location"), where("title", "==", locationtitle)),
       (snapshot) => {
@@ -43,8 +40,6 @@ export default function Example() {
         );
       }
     );
-
-    // getAllLocations();
   });
 
   return (

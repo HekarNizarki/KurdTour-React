@@ -49,6 +49,7 @@ export default function Example() {
     setisLogin(true);
     handleClosesign();
     await addDoc(usercollectionRef, {
+      id: auth.currentUser.uid,
       name: registerName,
       email: registerEmail,
       lname: [],

@@ -6,7 +6,8 @@ import {
   onSnapshot,
   query,
   where,
-  addDoc,
+  updateDoc,
+  doc,
 } from "firebase/firestore";
 import { auth } from "./Registaration/Authconfig";
 
@@ -18,29 +19,27 @@ import "./App.css";
 import { RWebShare } from "react-web-share";
 
 export default function Example() {
-  const usercollectionRef = collection(db, "users");
-
+  const [isfav, setIsvav] = useState();
   const [dlocation, Setdlocation] = useState([]);
   const { locationtitle } = useParams();
 
-  const addFav = async () => {
-    await addDoc(usercollectionRef, {
-      name: auth.currentUser.displayName,
-      email: auth.currentUser.email,
-      id: auth.currentUser.uid,
-    });
-    console.log(auth.currentUser);
+  const addFav = async (id, email) => {
+    const userdoc = doc(db, "Location", id);
+    const newEmail = { FavLocationEmail: email.push(auth.currentUser.email) };
+    await updateDoc(userdoc, newEmail);
+    console.log("add");
   };
+
   useEffect(() => {
     onSnapshot(
       query(collection(db, "Location"), where("title", "==", locationtitle)),
       (snapshot) => {
         Setdlocation(
-          snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.lid }))
+          snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
         );
       }
     );
-  });
+  }, [locationtitle, isfav]);
 
   return (
     <div className="bg-teal-100">
@@ -57,6 +56,7 @@ export default function Example() {
             <div className="max-w-5xl mx-auto pt-10 pb-9 px-3 sm:px-6 ">
               <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl">
                 {location.title}
+                {}
               </h1>
               {/* Reviews */}
               <div className="mt-6">
@@ -180,12 +180,30 @@ export default function Example() {
                   </button>
                 </RWebShare>
               </div>
-              <button
-                onClick={addFav}
-                className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl pt-3 pb-3"
-              >
-                Add to Fav
-              </button>
+
+              {isfav === null ? (
+                <div>
+                  {" "}
+                  <button
+                    onClick={() => addFav(location.id)}
+                    className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl pt-3 pb-3"
+                  >
+                    Add to Fav
+                  </button>
+                </div>
+              ) : (
+                <div>
+                  <div>
+                    {" "}
+                    <button
+                      onClick={() => addFav(location.id)}
+                      className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl pt-3 pb-3"
+                    >
+                      Add to Fav
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

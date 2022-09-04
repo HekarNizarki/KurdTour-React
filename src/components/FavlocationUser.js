@@ -32,21 +32,29 @@ export default function FavlocationUser(props) {
         </div>
       ) : (
         <div>
-          <div className="justify-center items-center text-center">
+          <div className=" flex flex-col justify-center items-center text-center">
             <h2 className="text-3xl font-bold tracking-tight text-yellow-600 mt-9">
               Favorite location of User
             </h2>
 
             {/* {JSON.stringify(profile[0].lname[0])} */}
-            <ul>
-              {profile.map((loc, index) => (
-                <Link to={`/locations/${loc.lname[index + 1]}`}>
-                  <li key={index} className="text-xl text-gray-500  mt-4">
-                    {loc.lname + ""}
-                  </li>
-                </Link>
-              ))}
-            </ul>
+
+            {profile.map((loc, index) => {
+              return (
+                <div className="flex flex-col">
+                  <pre>
+                    <Link to={`/locations/${loc.lname[index]}`}>
+                      <li
+                        key={index}
+                        className=" flex flex-col text-xl text-gray-500  mt-2"
+                      >
+                        {loc.lname + "\n"}
+                      </li>
+                    </Link>
+                  </pre>
+                </div>
+              );
+            })}
           </div>
         </div>
       )}

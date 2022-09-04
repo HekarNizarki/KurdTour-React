@@ -16,7 +16,7 @@ export default function Profile() {
       query(collection(db, "users"), where("email", "==", idProfile)),
       (snapshot) => {
         SetProfile(
-          snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.lid }))
+          snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
         );
       }
     );
@@ -34,16 +34,17 @@ export default function Profile() {
           />
         </div>
       ) : (
-        <div>
+        <div className="flex flex-col justify-center items-center text-center">
+          <img
+            className="rounded-full w-auto h-60 mt-9 mb-4 container"
+            src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png"
+            alt=""
+          />
           <div className="flex flex-col justify-center items-center text-center">
-            {profile.map((pro, index) => (
-              <div key={index}>
+            {profile.map((pro) => (
+              <div>
+                {""}
                 <div className="">
-                  <img
-                    className="rounded-full w-auto h-60 mt-9 mb-4 container"
-                    src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png"
-                    alt=""
-                  />
                   <h2 className="text-3xl font-bold tracking-tight text-yellow-600 ">
                     {pro.name}
                   </h2>

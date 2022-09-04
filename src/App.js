@@ -7,7 +7,6 @@ import Search from "./pages/Search";
 import Profile from "./pages/Profile";
 import ViewCityPlasess from "./components/ViewCityPlasess";
 import SingleLocation from "./components/SigleLocation";
-import Favplases from "./components/Favplases";
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/locations" element={<Locations />} />
-        <Route path="/favplases/:fav" element={<Favplases />} />
         <Route path="/locations/:locationtitle" element={<SingleLocation />} />
         <Route path="/contact" element={<Search />} />
         <Route path="/profile/:idProfile" element={<Profile />} />

@@ -19,7 +19,6 @@ import "./App.css";
 import { RWebShare } from "react-web-share";
 
 export default function Example() {
-  const [isfav, setIsvav] = useState();
   const [dlocation, Setdlocation] = useState([]);
   const { locationtitle } = useParams();
 
@@ -39,7 +38,7 @@ export default function Example() {
         );
       }
     );
-  }, [locationtitle, isfav]);
+  }, [locationtitle]);
 
   return (
     <div className="bg-teal-100">
@@ -180,30 +179,15 @@ export default function Example() {
                   </button>
                 </RWebShare>
               </div>
-
-              {isfav === null ? (
-                <div>
-                  {" "}
-                  <button
-                    onClick={() => addFav(location.id)}
-                    className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl pt-3 pb-3"
-                  >
-                    Add to Fav
-                  </button>
-                </div>
-              ) : (
-                <div>
-                  <div>
-                    {" "}
-                    <button
-                      onClick={() => addFav(location.id)}
-                      className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl pt-3 pb-3"
-                    >
-                      Add to Fav
-                    </button>
-                  </div>
-                </div>
-              )}
+              <div>
+                {" "}
+                <button
+                  onClick={() => addFav(location.id)}
+                  className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl pt-3 pb-3"
+                >
+                  Add to Fav
+                </button>
+              </div>
             </div>
           </div>
         </div>

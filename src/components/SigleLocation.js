@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import ReactStars from "react-rating-stars-component";
 import { db } from "../firebase";
 import {
@@ -19,9 +19,23 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "./App.css";
 import { RWebShare } from "react-web-share";
 
+import Snackbar from "@mui/material/Snackbar";
+
 export default function Example() {
+  const [open, setOpen] = useState(false);
+
   const [dlocation, Setdlocation] = useState([]);
   const { locationtitle } = useParams();
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const action = <Fragment></Fragment>;
 
   const addFav = async (id) => {
     const userdoc = doc(db, "Location", id);
@@ -185,9 +199,18 @@ export default function Example() {
               <div>
                 {" "}
                 <button
-                  onClick={() => addFav(location.id)}
+                  onClick={() => addFav(location.id).then(handleClick)}
                   className="text-2xl font-bold text-gray-900 sm:text-3xl pt-3 pb-3"
                 >
+                  <div>
+                    <Snackbar
+                      open={open}
+                      autoHideDuration={6000}
+                      onClose={handleClose}
+                      message="Location added successfully "
+                      action={action}
+                    />
+                  </div>
                   Add to Fav
                 </button>
               </div>

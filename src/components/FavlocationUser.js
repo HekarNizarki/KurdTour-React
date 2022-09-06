@@ -5,8 +5,6 @@ import { useState, useEffect } from "react";
 import ReactLoading from "react-loading";
 import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
-import { auth } from "./Registaration/Authconfig";
-
 
 export default function FavlocationUser(props) {
   const [profile, SetProfile] = useState();

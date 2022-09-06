@@ -156,9 +156,9 @@ export default function Example() {
                     </p>
                   </div>
                 </div>
-                <div className="mt-10">
+                <div className="mt-3 sm:mb-6">
                   <h2 className="text-xl font-bold text-gray-900 pb-3">Map</h2>
-                  <div className="container w-full h-80 object-left object-cover">
+                  <div className="container w-full h-90 object-left object-cover">
                     <MapContainer
                       center={[location.loca, location.locl]}
                       zoom={32}

@@ -53,7 +53,9 @@ export default function Profile() {
                   </h2>
                 </div>
               </div>
+              
             ))}
+           
           </div>
           <FavlocationUser Email={idProfile} />
         </div>

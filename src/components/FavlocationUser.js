@@ -38,10 +38,14 @@ export default function FavlocationUser(props) {
         <div>
           <div className="bg-teal-50">
             <div className="max-w-2xl mx-auto py-3 px-4 sm:py-4 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-yellow-600 ">
-                Favorite locations that interest you
-              </h2>
-              <h2 className="text-xl tracking-tight text-gray-500  mt-4">
+              <hr
+                style={{
+                  color: "dddddd",
+                  backgroundColor: "dddddd",
+                  height: 5,
+                }}
+              />
+              <h2 className="text-xl tracking-tight text-gray-900  mt-4 font-semibold">
                 Collections of Favorite Locations
               </h2>
               {/* <Link to={`/location/${"Duhok Mall"}`}> */}

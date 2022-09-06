@@ -22,9 +22,11 @@ export default function Example() {
   const [dlocation, Setdlocation] = useState([]);
   const { locationtitle } = useParams();
 
-  const addFav = async (id, email) => {
+  const addFav = async (id) => {
     const userdoc = doc(db, "Location", id);
-    const newEmail = { FavLocationEmail: email.push(auth.currentUser.email) };
+    const newEmail = {
+      FavLocationEmail:  [auth.currentUser.email],
+    };
     await updateDoc(userdoc, newEmail);
     console.log("add");
   };

@@ -51,7 +51,6 @@ export default function Example() {
       id: auth.currentUser.uid,
       name: registerName,
       email: registerEmail,
-      
     });
   };
   const login = async () => {

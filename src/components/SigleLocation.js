@@ -8,9 +8,10 @@ import {
   where,
   updateDoc,
   doc,
+  arrayUnion,
 } from "firebase/firestore";
-import { auth } from "./Registaration/Authconfig";
 
+import { auth } from "./Registaration/Authconfig";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { BsFillArrowLeftSquareFill } from "react-icons/bs";
@@ -25,7 +26,7 @@ export default function Example() {
   const addFav = async (id) => {
     const userdoc = doc(db, "Location", id);
     const newEmail = {
-      FavLocationEmail:  [auth.currentUser.email],
+      FavLocationEmail: arrayUnion(auth.currentUser.email),
     };
     await updateDoc(userdoc, newEmail);
     console.log("add");
@@ -185,7 +186,7 @@ export default function Example() {
                 {" "}
                 <button
                   onClick={() => addFav(location.id)}
-                  className="text-2xl font-bold tracking-tight text-gray-900 sm:tracking-tight sm:text-3xl pt-3 pb-3"
+                  className="text-2xl font-bold text-gray-900 sm:text-3xl pt-3 pb-3"
                 >
                   Add to Fav
                 </button>

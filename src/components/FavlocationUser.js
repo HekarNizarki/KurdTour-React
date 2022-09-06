@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import ReactLoading from "react-loading";
 import { Link } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
+import { auth } from "./Registaration/Authconfig";
+
 
 export default function FavlocationUser(props) {
   const [profile, SetProfile] = useState();
@@ -13,7 +15,7 @@ export default function FavlocationUser(props) {
     onSnapshot(
       query(
         collection(db, "Location"),
-        where("FavLocationEmail", "==", [props.Email])
+        where("FavLocationEmail", "array-contains", props.Email)
       ),
       (snapshot) => {
         SetProfile(
@@ -37,7 +39,7 @@ export default function FavlocationUser(props) {
       ) : (
         <div>
           <div className="bg-teal-50">
-            <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
+            <div className="max-w-2xl mx-auto py-3 px-4 sm:py-4 sm:px-6 lg:max-w-7xl lg:px-8 text-center">
               <h2 className="text-3xl font-bold tracking-tight text-yellow-600 ">
                 Favorite locations that interest you
               </h2>

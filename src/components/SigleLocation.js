@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect } from "react";
 import ReactStars from "react-rating-stars-component";
 import { db } from "../firebase";
 import {
@@ -35,7 +35,7 @@ export default function Example() {
     setOpen(false);
   };
 
-  const action = <Fragment></Fragment>;
+ 
 
   const addFav = async (id) => {
     const userdoc = doc(db, "Location", id);
@@ -208,7 +208,7 @@ export default function Example() {
                       autoHideDuration={6000}
                       onClose={handleClose}
                       message="Location added successfully "
-                      action={action}
+                      
                     />
                   </div>
                   Add to Fav

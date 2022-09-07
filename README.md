@@ -23,4 +23,8 @@ This project is specialized with view the most tourist location in Kurdistan reg
 ## Screenshots of application
 
 ![new img](/src/assets/01.PNG)
+![new img](/src/assets/02.PNG)
+![new img](/src/assets/03.PNG)
+
+
 
